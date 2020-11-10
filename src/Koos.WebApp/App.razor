@@ -1,0 +1,25 @@
+﻿@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.Routing
+
+<Router AppAssembly="typeof(Program).Assembly">
+    <Found Context="routeData">
+        <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+            <NotAuthorized>
+                <MatH4>Forbiden</MatH4>
+                <p>Only authenticated users can access this resource.</p>
+            </NotAuthorized>
+            <Authorizing>
+                <MatH4>Authorizing...</MatH4>
+                <MatProgressBar Indeterminate="true" />
+            </Authorizing>
+        </AuthorizeRouteView>     
+    </Found>        
+    <NotFound>
+        <CascadingAuthenticationState>
+            <LayoutView Layout="typeof(MainLayout)">
+                <p>Sorry, there's nothing at this address.</p>
+            </LayoutView>
+        </CascadingAuthenticationState>
+    </NotFound>
+</Router>
+

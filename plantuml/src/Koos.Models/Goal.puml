@@ -1,0 +1,16 @@
+@startuml
+class Goal {
+    + Goal()
+    + Goal(stars:int)
+    + Description : string <<get>> <<set>>
+    + Reward : string <<get>> <<set>>
+    + StarsToAchieve : int <<get>> <<set>>
+    + StarsEarned : int <<get>> <<set>>
+    + GiveStar() : void
+    + TakeStar() : void
+}
+IEntity <|-- Goal
+Goal --> "StartDate" DateTime
+Goal --> "EndDate" DateTime
+Goal o-> "Id" Guid
+@enduml

@@ -1,0 +1,23 @@
+﻿@inherits LayoutComponentBase
+
+<MatAppBarContainer>
+    <MatAppBar Fixed="true">
+        <MatAppBarRow>
+            <MatAppBarSection>
+                <MatIconButton Icon="menu"></MatIconButton>
+                <MatAppBarTitle>KooS</MatAppBarTitle>
+            </MatAppBarSection>
+            <MatAppBarSection Align="@MatAppBarSectionAlign.End">
+                <environment include="Development">
+                <div>(Development mode)</div>
+                </environment>
+            </MatAppBarSection>
+        </MatAppBarRow>
+    </MatAppBar>
+ </MatAppBarContainer>
+
+<div class="main">
+    <div class="content px-4">
+        @Body
+    </div>
+</div>

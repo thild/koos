@@ -1,0 +1,10 @@
+<Project>
+    <PropertyGroup>
+        <AspNetCoreVersion>3.0.0</AspNetCoreVersion>
+        <AspNetCoreExtensionsVersion>3.0.0</AspNetCoreExtensionsVersion>
+        <SystemVersion>4.6.0</SystemVersion>
+        <EntityFrameworkCoreVersion>3.0.0</EntityFrameworkCoreVersion>
+        <EntityFrameworkCoreSqliteVersion>3.0.0</EntityFrameworkCoreSqliteVersion>
+        <BlazorMonoVersion>3.0.0-preview9.19465.2</BlazorMonoVersion>
+    </PropertyGroup>
+</Project>

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="Blazored.LocalStorage" Version="2.1.1" />
+    <PackageReference Include="Reshiru.Blazor.IndexedDB.Framework" Version="1.0.1" />
+    <PackageReference Include="System.Text.Json" Version="*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Koos.Domain\Koos.Domain.csproj" />
+    <ProjectReference Include="..\Koos.Infrastructure.Data\Koos.Infrastructure.Data.csproj" />
+  </ItemGroup>
+
+</Project>

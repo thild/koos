@@ -1,0 +1,10 @@
+@startuml
+class KoosDb {
+    + KoosDb(jSRuntime:IJSRuntime, name:string, version:int)
+    + <<virtual>> Set() : IndexedSet<TEntity>
+}
+class "IndexedSet`1"<T> {
+}
+IndexedDb <|-- KoosDb
+KoosDb --> "Goals<Goal>" "IndexedSet`1"
+@enduml

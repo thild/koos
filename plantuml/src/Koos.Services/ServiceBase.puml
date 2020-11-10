@@ -1,0 +1,13 @@
+@startuml
+abstract class "ServiceBase`1"<T> <<partial>> {
+    + ServiceBase(localStorageService:ILocalStorageService, dbFactory:IIndexedDbFactory)
+    + <<virtual>> <<async>> SaveAsync(item:T, update:bool) : Task
+    + <<virtual>> <<async>> DeleteAsync(item:T) : Task
+    + <<virtual>> <<async>> GetAsync(id:Guid) : Task<T>
+    + <<virtual>> <<async>> GetAllAsync() : Task<IQueryable<T>>
+}
+class "Dictionary`2"<T1,T2> {
+}
+"ServiceBase`1" o-> "_entities<Guid,T>" "Dictionary`2"
+"ServiceBase`1" --> "DbFactory" IIndexedDbFactory
+@enduml

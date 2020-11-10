@@ -1,0 +1,5 @@
+@startuml
+interface IEntity {
+}
+IEntity --> "Id" Guid
+@enduml

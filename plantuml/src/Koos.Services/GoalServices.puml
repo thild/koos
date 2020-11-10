@@ -1,0 +1,8 @@
+@startuml
+class GoalServices {
+    + GoalServices(localStorageService:ILocalStorageService, dbFactory:IIndexedDbFactory)
+}
+class "ServiceBase`1"<T> {
+}
+"ServiceBase`1" "<Goal>" <|-- GoalServices
+@enduml

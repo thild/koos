@@ -1,0 +1,45 @@
+﻿@page "/goals"
+@using Koos.Domain.Models
+@inherits GoalsBase
+
+<h1>Goals</h1>
+
+@if (Goals != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Starts to achive</th>
+                <th>Starts earned</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var goal in Goals)
+            {
+                <tr>
+                    <td>@goal.Description</td>
+                    <td>@goal.StarsToAchieve</td>
+                    <td>@goal.StarsEarned</td>
+                    <td><button @onclick="@(() => EditGoal(goal))">Edit</button></td>
+                    <td><button @onclick="@(() => DeleteGoal(goal))">Delete</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<fieldset>
+    <legend>Add new goal</legend>
+    <EditForm Model="@CurrentGoal" OnValidSubmit="@SaveGoal">
+        <InputText @bind-Value="@CurrentGoal.Description" placeholder="Description..." />
+        <InputNumber @bind-Value="@CurrentGoal.StarsToAchieve" placeholder="Stars to achieve..." />
+        <InputNumber @bind-Value="@CurrentGoal.StarsEarned" placeholder="Stars earned..." />
+        <button type="submit">Add</button>
+
+        <p><ValidationSummary /></p>
+        <DataAnnotationsValidator />
+    </EditForm>
+</fieldset>

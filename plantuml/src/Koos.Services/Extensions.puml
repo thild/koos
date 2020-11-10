@@ -1,0 +1,5 @@
+@startuml
+class Extensions <<static>> {
+    + {static} Fill(dest:TDest, source:TSource) : TDest
+}
+@enduml

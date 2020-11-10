@@ -1,0 +1,33 @@
+﻿@page "/"
+
+@using Koos.Domain.Models
+@inject Koos.Application.Services.GoalServices GoalServices
+
+<h1>Goals</h1>
+
+@if (goals != null)
+{
+    foreach (var goal in goals)
+    {
+        <h4>@goal.Description</h4>
+        for (int i = 0; i < goal.StarsToAchieve; i++)
+        {
+            var starStyle = "color:yellow";
+            if (i >= goal.StarsEarned)
+            {
+                starStyle = "color:gray";
+            }
+            <MatIcon Style="@starStyle" Icon="star" />
+        }
+    }
+}
+
+@code {
+
+    List<Goal> goals;
+
+    protected override async Task OnInitializedAsync()
+    {
+        goals = (await GoalServices.GetAllAsync()).ToList();
+    }    
+}

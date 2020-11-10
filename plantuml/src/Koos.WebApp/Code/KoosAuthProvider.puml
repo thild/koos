@@ -1,0 +1,6 @@
+@startuml
+class KoosAuthStateProvider {
+    + <<override>> GetAuthenticationStateAsync() : Task<AuthenticationState>
+}
+AuthenticationStateProvider <|-- KoosAuthStateProvider
+@enduml
